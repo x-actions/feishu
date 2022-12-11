@@ -1,0 +1,29 @@
+name: 'feishu Robot Messages'
+description: 'Github Action for Feishu Robot Messages'
+author: 'xiexianbin <me@xiexianbin>'
+inputs: 
+  FEISHU_CUSTOMERBOT_WEBHOOK:
+    description: 'feishu CustomerBot webhook url, like https://open.feishu.cn/open-apis/bot/v2/hook/<uuid>'
+    required: true
+  FEISHU_CUSTOMERBOT_SECRET:
+    description: 'feishu CustomerBot webhook secret'
+    required: true
+  MSGTYPE:
+    description: 'message type (text, interactive)'
+    default: 'text'
+    required: true
+  TEXT:
+    description: 'message title send by bot'
+    default: 'foo title'
+    required: true
+  CONTENT:
+    description: 'message content send by bot'
+    default: 'bar message content'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+
+branding:
+  color: 'gray-dark'
+  icon: 'message-square'
