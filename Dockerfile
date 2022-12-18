@@ -18,7 +18,7 @@ ENV LC_ALL C.UTF-8
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US.UTF-8
 
-RUN apk update && apk add --no-cache curl && rm -rf /var/cache/apk/*
+RUN apk update && apk add --no-cache curl bash && rm -rf /var/cache/apk/*
 
 RUN curl -Lfs -o /usr/local/bin/feishu https://github.com/x-actions/feishu/releases/latest/download/feishu-linux && \
     chmod +x /usr/local/bin/feishu
